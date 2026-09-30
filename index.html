@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Bangle Bliss — Elegant Bangles Online</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="container header-inner">
+			<div class="brand-group">
+				<div class="brand">Bangle Bliss</div>
+				<div class="tag">Elegance on Every Wrist</div>
+			</div>
+			<nav class="main-nav">
+				<a href="#">Home</a>
+				<a href="#shop">Shop</a>
+				<a href="#categories">Categories</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<div class="header-actions">
+				<div class="search-wrap">
+					<input id="searchInput" type="search" placeholder="Search bangles, colors, styles..." aria-label="Search products">
+				</div>
+				<button id="cartBtn" class="cart-btn" aria-label="Open cart">
+					<span class="cart-ico">🛒</span> <span id="cartCount" class="cart-count">0</span>
+				</button>
+				<button id="chatToggleHeader" class="ai-btn" title="Chat with Bliss AI">Bliss AI</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero hero-premium">
+			<div class="container hero-inner">
+				<div class="hero-content">
+					<h1>Elegance on Every Wrist</h1>
+					<p>Discover beautiful bangles for every occasion, from timeless traditional designs to modern statement pieces.</p>
+					<div class="hero-ctas">
+						<a href="#shop" class="btn primary" id="heroShop">Shop Collection</a>
+						<a href="#categories" class="btn ghost">Explore Categories</a>
+					</div>
+				</div>
+				<div class="hero-visual" data-alt="Bridal bangles styled for hero image">
+					<img id="heroImage" src="images/bridal-bangle.jpg" alt="Bridal bangles styled for a festive look" onerror="this.style.display='none';this.parentNode.classList.add('img-missing');this.parentNode.setAttribute('data-alt', 'Hero image not available')" />
+				</div>
+			</div>
+		</section>
+
+		<section id="shop" class="products-section container">
+			<div class="products-top">
+				<h2>Featured Collection</h2>
+				<div class="categories" id="categories">
+					<button class="cat-btn active" data-cat="All">All</button>
+					<button class="cat-btn" data-cat="Traditional">Traditional</button>
+					<button class="cat-btn" data-cat="Bridal">Bridal</button>
+					<button class="cat-btn" data-cat="Gold">Gold</button>
+					<button class="cat-btn" data-cat="Silver">Silver</button>
+					<button class="cat-btn" data-cat="Designer">Designer</button>
+				</div>
+			</div>
+
+			<div id="productsGrid" class="products-grid" aria-live="polite">
+				<!-- Products inserted by JavaScript -->
+			</div>
+		</section>
+
+		<section id="categories" class="container categories-block">
+			<h3>Shop by Category</h3>
+			<div class="category-cards">
+				<button class="cat-card cat-btn" data-cat="Traditional">Traditional</button>
+				<button class="cat-card cat-btn" data-cat="Bridal">Bridal</button>
+				<button class="cat-card cat-btn" data-cat="Gold">Gold</button>
+				<button class="cat-card cat-btn" data-cat="Silver">Silver</button>
+				<button class="cat-card cat-btn" data-cat="Designer">Designer</button>
+			</div>
+		</section>
+
+		<section id="about" class="container about-section">
+			<h3>About Bangle Bliss</h3>
+			<p>We curate a selection of bangles that marry traditional craftsmanship with contemporary aesthetics. Perfect for gifting or elevating your wardrobe.</p>
+		</section>
+
+		<section class="why container">
+			<h3>Why Bangle Bliss</h3>
+			<div class="why-grid">
+				<div class="why-card">
+					<div class="icon">🎀</div>
+					<h4>Curated Collection</h4>
+					<p>Handpicked designs from trusted artisans.</p>
+				</div>
+				<div class="why-card">
+					<div class="icon">⭐</div>
+					<h4>Quality Designs</h4>
+					<p>Durable finishes and beautiful detailing.</p>
+				</div>
+				<div class="why-card">
+					<div class="icon">🛒</div>
+					<h4>Easy Shopping</h4>
+					<p>Smooth checkout and reliable support.</p>
+				</div>
+				<div class="why-card">
+					<div class="icon">💫</div>
+					<h4>Find Your Style</h4>
+					<p>Options for every occasion and mood.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="container contact-section">
+			<h3>Contact</h3>
+			<p>Questions? Email us at <a href="mailto:hello@banglebliss.example">hello@banglebliss.example</a></p>
+		</section>
+	</main>
+
+	<!-- Cart sidebar -->
+	<aside id="cartPanel" class="cart-panel" aria-hidden="true">
+		<div class="cart-header">
+			<h4>Your Cart</h4>
+			<button id="closeCart">✕</button>
+		</div>
+		<div id="cartItems" class="cart-items">
+			<!-- Cart items rendered by JS -->
+		</div>
+		<div class="cart-footer">
+			<div class="total">Total: <span id="cartTotal">₹0</span></div>
+			<button id="checkout" class="btn primary">Proceed to Checkout</button>
+		</div>
+	</aside>
+
+	<!-- Chatbot UI -->
+	<div id="chatbot" class="chatbot">
+		<button id="chatToggle" class="chat-toggle">💬</button>
+		<div id="chatWindow" class="chat-window" aria-hidden="true" style="display:none">
+			<div class="chat-header">
+				<strong>Bangle Bliss Chat</strong>
+				<button id="closeChat">✕</button>
+			</div>
+			<div id="chatMessages" class="chat-messages">
+				<div class="bot-msg">Hi! I'm here to help. Ask about products or sizes.</div>
+			</div>
+			<div class="chat-input">
+				<input id="chatInput" placeholder="Type a message..." />
+				<button id="sendChat" class="btn">Send</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
